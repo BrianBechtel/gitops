@@ -2,6 +2,7 @@
 FROM golang:1.17 as builder
 
 WORKDIR /opt/app
+ENV GOPROXY=https://goproxy.io,direct
 COPY go.* ./
 RUN go mod download
 
